@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Byte Client Emotes – $5 each • PvP Legends Pack $15</title>
+  <style>
+    body{margin:0;background:#0f1419;color:white;font-family:Segoe UI;padding:40px;}
+    h1{text-align:center;font-size:3.5rem;background:linear-gradient(90deg,#8B00FF,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px;max-width:1400px;margin:50px auto;}
+    .emote{background:rgba(255,255,255,0.07);border-radius:20px;padding:20px;text-align:center;}
+    .emote video,.emote img{width:100%;border-radius:12px;}
+    .price{font-size:2rem;color:#00ff88;font-weight:bold;}
+    .buy{background:linear-gradient(45deg,#8B00FF,#4B0082);color:white;border:none;padding:15px 40px;font-size:1.3rem;border-radius:50px;cursor:pointer;margin-top:15px;}
+    .pack{background:linear-gradient(45deg,#ff00aa,#8B00FF);transform:scale(1.05);}
+  </style>
+</head>
+<body>
+  <h1>Byte Emotes Store</h1>
+  <p style="text-align:center;font-size:1.4rem;">Every individual emote only $5 • Packs heavily discounted</p>
+
+  <div class="grid">
+    <div class="emote"><video src="https://cdn.byteclient.site/emotes/dab.mp4" autoplay loop muted></video><h3>Dab</h3><p class="price">$5</p><button class="buy" onclick="buy(2)">Buy Dab</button></div>
+    <div class="emote"><video src="https://cdn.byteclient.site/emotes/floss.mp4" autoplay loop muted></video><h3>Floss</h3><p class="price">$5</p><button class="buy" onclick="buy(3)">Buy Floss</button></div>
+    <div class="emote"><video src="https://cdn.byteclient.site/emotes/griddy.mp4" autoplay loop muted></video><h3>Griddy</h3><p class="price">$5</p><button class="buy" onclick="buy(4)">Buy Griddy</button></div>
+
+    <div class="emote pack">
+      <h2>PvP Legends Pack</h2>
+      <video src="https://cdn.byteclient.site/emotes/pvp-pack-preview.mp4" autoplay loop muted></video>
+      <p>8 legendary taunts<br>Worth $40 → Only <span class="price">$15</span></p>
+      <button class="buy" onclick="buy(101)">Buy Pack – $15</button>
+    </div>
+  </div>
+
+  <script>
+    function buy(id){location.href=`https://api.byteclient.site/create-checkout?emote=${id}`;}
+  </script>
+</body>
+</html>
