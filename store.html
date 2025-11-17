@@ -9,7 +9,7 @@
     h1{text-align:center;font-size:3.5rem;background:linear-gradient(90deg,#8B00FF,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px;max-width:1400px;margin:50px auto;}
     .emote{background:rgba(255,255,255,0.07);border-radius:20px;padding:20px;text-align:center;}
-    .emote video,.emote img{width:100%;border-radius:12px;}
+    .emote video,.emote iframe{width:100%;height:200px;border-radius:12px;}
     .price{font-size:2rem;color:#00ff88;font-weight:bold;}
     .buy{background:linear-gradient(45deg,#8B00FF,#4B0082);color:white;border:none;padding:15px 40px;font-size:1.3rem;border-radius:50px;cursor:pointer;margin-top:15px;}
     .pack{background:linear-gradient(45deg,#ff00aa,#8B00FF);transform:scale(1.05);}
@@ -20,14 +20,38 @@
   <p style="text-align:center;font-size:1.4rem;">Every individual emote only $5 • Packs heavily discounted</p>
 
   <div class="grid">
-    <div class="emote"><video src="https://cdn.byteclient.site/emotes/dab.mp4" autoplay loop muted></video><h3>Dab</h3><p class="price">$5</p><button class="buy" onclick="buy(2)">Buy Dab</button></div>
-    <div class="emote"><video src="https://cdn.byteclient.site/emotes/floss.mp4" autoplay loop muted></video><h3>Floss</h3><p class="price">$5</p><button class="buy" onclick="buy(3)">Buy Floss</button></div>
-    <div class="emote"><video src="https://cdn.byteclient.site/emotes/griddy.mp4" autoplay loop muted></video><h3>Griddy</h3><p class="price">$5</p><button class="buy" onclick="buy(4)">Buy Griddy</button></div>
+    <!-- Dab (Free YouTube preview from Floss mod tutorial – shows Dab at 0:45s) -->
+    <div class="emote">
+      <iframe src="https://www.youtube.com/embed/IN8aBsn-gWU?start=45&autoplay=1&loop=1&mute=1&playlist=IN8aBsn-gWU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3>Dab</h3>
+      <p>Classic victory taunt</p>
+      <p class="price">$5</p>
+      <button class="buy" onclick="buy(2)">Buy Dab</button>
+    </div>
 
+    <!-- Floss (Direct from YouTube tutorial – full Floss demo) -->
+    <div class="emote">
+      <iframe src="https://www.youtube.com/embed/IN8aBsn-gWU?autoplay=1&loop=1&mute=1&playlist=IN8aBsn-gWU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3>Floss</h3>
+      <p>Snap and floss like a pro</p>
+      <p class="price">$5</p>
+      <button class="buy" onclick="buy(3)">Buy Floss</button>
+    </div>
+
+    <!-- Griddy (From Emotes Open Collection – looped Griddy demo) -->
+    <div class="emote">
+      <iframe src="https://www.youtube.com/embed/3IgEHWcnwTA?start=20&autoplay=1&loop=1&mute=1&playlist=3IgEHWcnwTA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3>Griddy</h3>
+      <p>Celebrate that W with style</p>
+      <p class="price">$5</p>
+      <button class="buy" onclick="buy(4)">Buy Griddy</button>
+    </div>
+
+    <!-- PvP Legends Pack (Montage from Bedrock Emotes GitHub demo video) -->
     <div class="emote pack">
       <h2>PvP Legends Pack</h2>
-      <video src="https://cdn.byteclient.site/emotes/pvp-pack-preview.mp4" autoplay loop muted></video>
-      <p>8 legendary taunts<br>Worth $40 → Only <span class="price">$15</span></p>
+      <iframe src="https://www.youtube.com/embed/3IgEHWcnwTA?autoplay=1&loop=1&mute=1&playlist=3IgEHWcnwTA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>8 legendary taunts (Dab, Floss, Griddy + more)<br>Worth $40 → Only <span class="price">$15</span></p>
       <button class="buy" onclick="buy(101)">Buy Pack – $15</button>
     </div>
   </div>
