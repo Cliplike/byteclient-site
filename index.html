@@ -3,43 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Byte Client – Minecraft Launcher</title>
+  <title>Byte Client</title>
   <style>
-    :root { --purple:#8B00FF; --dark:#0f1419; --accent:#00ff88; }
-    body{margin:0;font-family:'Segoe UI',sans-serif;background:var(--dark);color:white;text-align:center;padding:40px 20px;line-height:1.6;}
-    h1{font-size:4.5rem;background:linear-gradient(90deg,var(--purple),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:0;}
-    p{font-size:1.3rem;max-width:900px;margin:20px auto;opacity:0.9;}
-    .download,.store-btn{display:inline-block;margin:25px;padding:18px 55px;font-size:1.8rem;font-weight:bold;background:linear-gradient(45deg,var(--purple),#4B0082);border-radius:50px;text-decoration:none;color:white;box-shadow:0 10px 30px rgba(139,0,255,0.4);transition:all .3s;}
-    .download:hover,.store-btn:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 20px 40px rgba(139,0,255,0.6);}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;max-width:1200px;margin:80px auto;}
-    .card{background:rgba(255,255,255,0.05);padding:30px;border-radius:20px;backdrop-filter:blur(10px);}
-    footer{margin-top:120px;padding:40px;background:rgba(0,0,0,0.4);font-size:0.9rem;opacity:0.7;}
+    :root{--purple:#8B00FF;--cyan:#00ffea;--dark:#0d0d1f;--pink:#ff00aa;}
+    body{margin:0;overflow-x:hidden;background:var(--dark);color:white;font-family:'Segoe UI',sans-serif;height:100vh;display:flex;flex-direction:column;}
+    .bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 80%,rgba(139,0,255,0.4),transparent 50%),radial-gradient(circle at 80% 20%,rgba(0,255,234,0.3),transparent 50%),#0d0d1f;z-index:-1;animation:breath 20s infinite;}
+    @keyframes breath{0%,100%{opacity:0.7}50%{opacity:1}}
+    header{text-align:center;padding:80px 20px 40px;flex:1;display:flex;flex-direction:column;justify-content:center;}
+    h1{font-size:6rem;margin:0;background:linear-gradient(90deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:float 6s ease-in-out infinite;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+    p{font-size:1.5rem;opacity:0.9;margin:20px auto;max-width:800px;}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1100px;margin:60px auto;padding:0 20px;}
+    .card{background:rgba(255,255,255,0.03);border-radius:20px;padding:35px;text-align:center;border:1px solid rgba(139,0,255,0.2);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(0,0,0,0.6);transition:0.4s;position:relative;overflow:hidden;}
+    .card:hover{transform:translateY(-15px);box-shadow:0 20px 60px rgba(139,0,255,0.3);border-color:var(--cyan);}
+    .card h2{font-size:2rem;margin:0 0 15px;background:linear-gradient(var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .sale-badge{position:absolute;top:-12px;right:-12px;background:var(--pink);color:white;padding:8px 20px;border-radius:30px;font-weight:bold;font-size:1rem;transform:rotate(15deg);box-shadow:0 4px 15px rgba(255,0,170,0.5);}
+    .sale-text{font-size:1.1rem;color:#ff00aa;margin-top:10px;}
+    .buttons{margin:40px auto;text-align:center;}
+    .btn{display:inline-block;margin:15px;padding:18px 60px;font-size:1.6rem;font-weight:bold;background:linear-gradient(45deg,var(--purple),#4B0082);border-radius:60px;text-decoration:none;color:white;box-shadow:0 10px 30px rgba(139,0,255,0.4);transition:0.4s;}
+    .btn:hover{transform:scale(1.08);box-shadow:0 15px 50px rgba(139,0,255,0.6);}
+    .btn.store{background:linear-gradient(45deg,var(--pink),var(--purple));}
+    footer{padding:40px;text-align:center;opacity:0.6;font-size:0.9rem;border-top:1px solid rgba(255,255,255,0.1);}
   </style>
 </head>
 <body>
-  <h1>Byte Client</h1>
-  <p>Minecraft launcher • 100% legal</p>
+  <div class="bg"></div>
+  
+  <header>
+    <h1>Byte Client</h1>
+    <p>The future of Minecraft is here</p>
 
-  <div class="features">
-    <div class="card">
-      <h2>Performance</h2>
-      <p>Smooth gameplay on the latest versions</p>
+    <div class="features">
+      <div class="card">
+        <h2>Performance</h2>
+        <p>Smooth gameplay on the latest versions</p>
+      </div>
+      <div class="card">
+        <div class="sale-badge">Sale</div>
+        <h2>Emotes</h2>
+        <p>Every emote only $5</p>
+        <p class="sale-text">PvP Legends Pack $15</p>
+      </div>
     </div>
-    <div class="card">
-      <h2>Emotes</h2>
-      <p>Every emote only $5<br>PvP Legends Pack $15</p>
-    </div>
-  </div>
 
-  <a href="https://github.com/YourPrivateRepo/ByteClient/releases/download/v1.6.3/ByteClient-v1.6.3-Windows.exe" class="download">
-    Download Windows (.exe – 24 MB)
-  </a>
-  <br>
-  <a href="/store.html" class="store-btn">Open Emotes Store →</a>
+    <div class="buttons">
+      <a href="https://github.com/YourPrivateRepo/ByteClient/releases/download/v1.6.3/ByteClient-v1.6.3-Windows.exe" class="btn">
+        Download Now
+      </a>
+      <br>
+      <a href="/store.html" class="btn store">Open Emotes Store →</a>
+    </div>
+  </header>
 
   <footer>
-    © 2025 Byte Client • Switzerland • Not affiliated with Mojang, Microsoft or Lunar Client<br>
-    Requires a legitimate Minecraft Java Edition account
+    © 2025 Byte Client • Switzerland<br>
+    Not affiliated with Mojang, Microsoft or Lunar Client • Requires legitimate Minecraft Java Edition account
   </footer>
 </body>
 </html>
